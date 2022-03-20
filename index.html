@@ -58,18 +58,150 @@
       <option value="./src/img/design/marvel.png">Marvel</option>
       <option value="./src/img/design/spiderman-1.png">Spiderman</option>
       <option value="./src/img/design/spiderman.png">Spiderman-1</option>
+      <option value="./src/img/design/spider.png">Spider</option>
     </select>
 
     <!-- colors -->
-    <label for="tshirt-color" class="text-gray-700">T-shirt Colors:</label>
-    <select id="tshirt-color">
-      <option value="#fff">White</option>
-      <option value="#000">Black</option>
-      <option value="#D60000">Red</option>
-      <option value="#008000">Green</option>
-      <option value="#ff0">Yellow</option>
-      <option value="#7C7C7C">Grey</option>
-    </select>
+    <!-- <label for="tshirt-color" class="text-gray-700">T-shirt Colors:</label>
+    <select
+      id="tshirt-color"
+      class="h-9 overflow-hidden outline-none mt-3"
+      multiple
+    >
+      <option
+        value="#fff"
+        class="w-16 font-normal mt-2 text-center mr-5 inline-block rounded-lg bg-white border"
+      >
+        White
+      </option>
+      <option
+        value="#000"
+        class="w-16 font-normal pt-2 text-center mr-5 inline-block rounded-lg bg-gray-800 text-white"
+      >
+        Black
+      </option>
+      <option
+        value="#D60000"
+        class="w-16 font-normal pt-2 text-center mr-5 inline-block rounded-lg bg-red-700"
+      >
+        Red
+      </option>
+      <option
+        value="#000026"
+        class="w-16 font-normal pt-2 text-center mr-5 inline-block rounded-lg bg-indigo-900"
+      >
+        Navy
+      </option>
+      <option
+        value="#ff0"
+        class="w-16 font-normal pt-2 text-center mr-5 inline-block rounded-lg bg-yellow-500"
+      >
+        Yellow
+      </option>
+      <option
+        value="#7C7C7C"
+        class="w-16 font-normal pt-2 text-center mr-5 inline-block rounded-lg bg-slate-500"
+      >
+        Grey
+      </option>
+    </select> -->
+
+    <!-- collapse color -->
+    <div
+      tabindex="0"
+      class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-80"
+    >
+      <input type="checkbox" class="peer" />
+      <div class="collapse-title text-xl font-medium">
+        Pilih Warna Kaos Favoritmu
+      </div>
+      <div class="collapse-content transition duration-300">
+        <ul class="flex gap-x-3" id="tshirt-color">
+          <li>
+            <button
+              onclick="putih()"
+              type="button"
+              class="btn btn-sm btn-circle bg-white hover:bg-slate-50 border-gray-400 hover:border-gray-400"
+            ></button>
+          </li>
+          <li>
+            <button
+              onclick="hitam()"
+              type="button"
+              class="btn btn-sm btn-circle bg-gray-900 hover:bg-black border-none"
+            ></button>
+          </li>
+          <li>
+            <button
+              onclick="abu()"
+              type="button"
+              class="btn btn-sm btn-circle bg-gray-500 hover:bg-gray-600 border-none"
+            ></button>
+          </li>
+          <li>
+            <button
+              onclick="navy()"
+              type="button"
+              class="btn btn-sm btn-circle bg-indigo-900 hover:bg-indigo-900 border-none"
+            ></button>
+          </li>
+          <li>
+            <button
+              onclick="biru()"
+              type="button"
+              class="btn btn-sm btn-circle bg-blue-700 hover:bg-blue-800 border-none"
+            ></button>
+          </li>
+          <li>
+            <button
+              onclick="merah()"
+              type="button"
+              class="btn btn-sm btn-circle bg-red-700 hover:bg-red-800 border-none"
+            ></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <ul class="menu menu-horizontal bg-base-400 rounded-box">
+      <li value="#fff">White</li>
+      <li>
+        <a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul> -->
 
     <br /><br />
     <label for="tshirt-custompicture" class="text-gray-700">
@@ -121,7 +253,7 @@
           Simpan Gambar yang sudah selesai kamu edit, lalu kirim ke Admin kita
           ya guys 👋
         </p>
-        <div class="flex gap-4">
+        <div class="flex gap-4 justify-center mt-4">
           <button
             id="download"
             type="button"
@@ -161,12 +293,14 @@
             >Kontak admin</a
           >
         </div>
-        <ul class="steps">
-          <li class="step step-primary">Register</li>
-          <li class="step step-primary">Choose plan</li>
-          <li class="step">Purchase</li>
-          <li class="step">Receive Product</li>
-        </ul>
+        <div class="mt-7">
+          <ul class="steps">
+            <li class="step step-primary">Edit Kaosmu</li>
+            <li class="step step-primary">Simpan</li>
+            <li class="step step-primary">Kirim ke Admin</li>
+            <li data-content="✓" class="step step-primary">Proses</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -231,216 +365,10 @@
     </div> -->
 
     <script src="./dist/fabric.min.js"></script>
-    <!-- <script src="./src/js/dom-to-image.min.js"></script> -->
-    <script src="./src/js/FileSaver.min.js"></script>
-    <script src="./src/js/jquery-3.6.0.min.js"></script>
-    <script src="./src/js/dom-to-image.min.js"></script>
-    <!-- <script>
-      const canvas = new fabric.Canvas("tshirt-canvas", {
-        width: 200,
-        height: 300,
-        selection: false,
-      });
-      canvas.requestRenderAll();
-
-      let mousePressed = false;
-
-      canvas.on("mouse:move", (event) => {
-        if (mousePressed) {
-          canvas.setCursor("crosshair");
-          canvas.requestRenderAll();
-        }
-      });
-
-      canvas.on("mouse:down", (event) => {
-        mousePressed = true;
-        canvas.setCursor("crosshair");
-        canvas.requestRenderAll();
-      });
-
-      canvas.on("mouse:up", (event) => {
-        mousePressed = false;
-        canvas.setCursor("default");
-        canvas.requestRenderAll();
-      });
-    </script> -->
-
-    <script>
-      let canvas = new fabric.Canvas("tshirt-canvas");
-
-      function updateTshirtImage(imageURL) {
-        fabric.Image.fromURL(imageURL, function (img) {
-          img.scaleToHeight(300);
-          img.scaleToWidth(300);
-          canvas.centerObject(img);
-          canvas.add(img);
-          canvas.renderAll();
-        });
-      }
-
-      document.getElementById("tshirt-color").addEventListener(
-        "change",
-        function () {
-          document.getElementById("tshirt-div").style.backgroundColor =
-            this.value;
-        },
-        false
-      );
-
-      document.getElementById("tshirt-design").addEventListener(
-        "change",
-        function () {
-          updateTshirtImage(this.value);
-        },
-        false
-      );
-
-      //upload custom design
-      document.getElementById("tshirt-custompicture").addEventListener(
-        "change",
-        function (e) {
-          var render = new FileReader();
-
-          render.onload = function (event) {
-            var imgObj = new Image();
-            imgObj.src = event.target.result;
-
-            //load picture, create image in Fabric.js
-            imgObj.onload = function () {
-              var img = new fabric.Image(imgObj);
-
-              img.scaleToHeight(300);
-              img.scaleToWidth(300);
-              canvas.centerObject(img);
-              canvas.add(img);
-              canvas.renderAll();
-            };
-          };
-          //If user selected picture, load it
-          if (e.target.files[0]) {
-            render.readAsDataURL(e.target.files[0]);
-          }
-        },
-        false
-      );
-      //Dell key obj remove
-      document.addEventListener("keydown", function (e) {
-        var keyCode = e.keyCode;
-
-        if (keyCode == 46) {
-          // console.log("Removing selected element on Fabric.js on DELETE key !");
-          canvas.remove(canvas.getActiveObject());
-        }
-      });
-
-      function myFunction() {
-        canvas.remove(canvas.getActiveObject());
-      }
-
-      //download
-
-      $(document).ready(function () {
-        $("#download").click(function () {
-          domtoimage
-            .toBlob(document.getElementById("tshirt-div"))
-            .then(function (blob) {
-              window.saveAs(blob, "myDesign.png");
-            });
-        });
-      });
-
-      // pen tool
-      // let mousePressed = false;
-
-      // canvas.on("mouse:move", (event) => {
-      //   if (mousePressed) {
-      //     canvas.setCursor("crosshair");
-      //     canvas.requestRenderAll();
-      //   }
-      // });
-
-      // canvas.on("mouse:down", (event) => {
-      //   mousePressed = true;
-      //   canvas.setCursor("crosshair");
-      //   canvas.requestRenderAll();
-      // });
-
-      // canvas.on("mouse:up", (event) => {
-      //   mousePressed = false;
-      //   canvas.setCursor("default");
-      //   canvas.requestRenderAll();
-      // });
-
-      // (function () {
-      //   var canvas = (this.__canvas = new fabric.Canvas("tshirt-canvas"));
-      //   fabric.Object.prototype.transparentCorners = false;
-
-      //   var $ = function (id) {
-      //     return document.getElementById(id);
-      //   };
-
-      //   // var rect = new fabric.Rect({
-      //   //   width: 100,
-      //   //   height: 100,
-      //   //   top: 100,
-      //   //   left: 100,
-      //   //   fill: "rgba(255,0,0,0.5)",
-      //   // });
-
-      //   canvas.add(rect);
-
-      //   var angleControl = $("angle-control");
-      //   angleControl.oninput = function () {
-      //     rect.set("angle", parseInt(this.value, 10)).setCoords();
-      //     canvas.requestRenderAll();
-      //   };
-
-      //   var scaleControl = $("scale-control");
-      //   scaleControl.oninput = function () {
-      //     rect.scale(parseFloat(this.value)).setCoords();
-      //     canvas.requestRenderAll();
-      //   };
-
-      //   var topControl = $("top-control");
-      //   topControl.oninput = function () {
-      //     rect.set("top", parseInt(this.value, 10)).setCoords();
-      //     canvas.requestRenderAll();
-      //   };
-
-      //   var leftControl = $("left-control");
-      //   leftControl.oninput = function () {
-      //     rect.set("left", parseInt(this.value, 10)).setCoords();
-      //     canvas.requestRenderAll();
-      //   };
-
-      //   var skewXControl = $("skewX-control");
-      //   skewXControl.oninput = function () {
-      //     rect.set("skewX", parseInt(this.value, 10)).setCoords();
-      //     canvas.requestRenderAll();
-      //   };
-
-      //   var skewYControl = $("skewY-control");
-      //   skewYControl.oninput = function () {
-      //     rect.set("skewY", parseInt(this.value, 10)).setCoords();
-      //     canvas.requestRenderAll();
-      //   };
-
-      //   function updateControls() {
-      //     scaleControl.value = rect.scaleX;
-      //     angleControl.value = rect.angle;
-      //     leftControl.value = rect.left;
-      //     topControl.value = rect.top;
-      //     skewXControl.value = rect.skewX;
-      //     skewYControl.value = rect.skewY;
-      //   }
-      //   canvas.on({
-      //     "object:moving": updateControls,
-      //     "object:scaling": updateControls,
-      //     "object:resizing": updateControls,
-      //     "object:rotating": updateControls,
-      //     "object:skewing": updateControls,
-      //   });
-      // })();
-    </script>
+    <script src="./dist/jquery-3.6.0.min.js"></script>
+    <script src="./dist/dom-to-image.min.js"></script>
+    <script src="./dist/FileSaver.min.js"></script>
+    <script src="./dist/dom-to-image.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
