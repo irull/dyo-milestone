@@ -6,8 +6,7 @@
     "dist": "dist"
   },
   "scripts": {
-    "dev": "lite-server",
-    "twnd": "npx tailwindcss -i ./src/input.css -o ./src/css/style.css --watch"
+    "dev": "lite-server & npx tailwindcss -i ./src/input.css -o ./src/css/style.css --watch"
   },
   "license": "MIT",
   "dependencies": {
