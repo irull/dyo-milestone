@@ -1,0 +1,17 @@
+{
+  "name": "dyo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "dist": "dist"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "twnd": "npx tailwindcss -i ./src/input.css -o ./src/css/style.css --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "daisyui": "^2.8.0",
+    "lite-server": "^2.6.1"
+  }
+}

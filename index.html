@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <title>DYO | milestone</title>
+  </head>
+  <body class="bg-white h-screen">
+    <!-- tshirt div -->
+    <div id="tshirt-div" class="w-[452px] h-[548px] relative bg-white">
+      <img
+        id="tshirt-backgroundpicture"
+        src="./src/img/background_tshirt.png"
+        alt="tshirt"
+      />
+      <div
+        id="drawingArea"
+        class="absolute top-[60px] left-[122px] z-10 w-[200px] h-[400px]"
+      >
+        <div class="w-[200px] h-[300px] relative select-none">
+          <canvas
+            id="tshirt-canvas"
+            class="absolute w-[200px] h-[300px] left-0 top-0 select-none cursor-default hover:border border-dashed border-gray-700"
+            width="200"
+            height="300"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEL design -->
+    <div class="flex items-center">
+      <p class="text-gray-800">
+        Untuk menghapus gambar yang sudah di pilih tekan tombol
+        <kbd class="kbd">DEL</kbd> atau
+      </p>
+      <button
+        onclick="myFunction()"
+        id="delete"
+        type="button"
+        class="btn btn-sm ml-1"
+      >
+        Delete
+      </button>
+    </div>
+
+    <!-- design -->
+    <label for="tshirt-design" class="text-gray-700">T-shirt Design :</label>
+    <select id="tshirt-design">
+      <option value="">Pilih design ...</option>
+      <option value="./src/img/design/batman_small.png">Batman</option>
+      <option value="./src/img/design/avenger-1.png">Avenger</option>
+      <option value="./src/img/design/avengers.png">Avengers</option>
+      <option value="./src/img/design/blackphanter.png">Black Phanter</option>
+      <option value="./src/img/design/marvel.png">Marvel</option>
+      <option value="./src/img/design/spiderman-1.png">Spiderman</option>
+      <option value="./src/img/design/spiderman.png">Spiderman-1</option>
+    </select>
+
+    <!-- colors -->
+    <label for="tshirt-color" class="text-gray-700">T-shirt Colors:</label>
+    <select id="tshirt-color">
+      <option value="#fff">White</option>
+      <option value="#000">Black</option>
+      <option value="#D60000">Red</option>
+      <option value="#008000">Green</option>
+      <option value="#ff0">Yellow</option>
+      <option value="#7C7C7C">Grey</option>
+    </select>
+
+    <br /><br />
+    <label for="tshirt-custompicture" class="text-gray-700">
+      Upload Designmu :</label
+    >
+    <input type="file" id="tshirt-custompicture" />
+
+    <!-- <button
+      id="download"
+      type="button"
+      class="px-4 py-2 bg-blue-500 rounded-lg hover:bg-blue-700"
+    >
+      Download
+    </button> -->
+
+    <label
+      for="my-modal-3"
+      class="btn w-52 rounded-full btn-primary modal-button"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-download mr-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+        />
+        <path
+          d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
+        /></svg
+      >Download Gambar</label
+    >
+
+    <!-- Put this part before </body> tag -->
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box relative">
+        <label
+          for="my-modal-3"
+          class="btn btn-sm btn-circle absolute right-2 top-2"
+          >✕</label
+        >
+        <h3 class="text-lg font-bold">
+          YEAY! Selamat, Kaosmu udah siap di proses
+        </h3>
+        <p class="py-4">
+          Simpan Gambar yang sudah selesai kamu edit, lalu kirim ke Admin kita
+          ya guys 👋
+        </p>
+        <div class="flex gap-4">
+          <button
+            id="download"
+            type="button"
+            class="btn btn-primary w-36 rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-download mr-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+              />
+              <path
+                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
+              />
+            </svg>
+            Simpan
+          </button>
+          <a
+            href="#"
+            class="btn font-medium text-white w-48 rounded-full bg-green-600 hover:bg-green-700 border-0 transition duration-300"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-whatsapp mr-1"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+              /></svg
+            >Kontak admin</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="controls">
+      <p>
+        <label for="angle">
+          <span>Angle:</span>
+          <input type="range" id="angle-control" value="0" min="0" max="360" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <span>Left:</span>
+          <input type="range" id="left-control" value="150" min="0" max="300" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <span>Top:</span>
+          <input type="range" id="top-control" value="150" min="0" max="300" />
+        </label>
+      </p>
+      <p>
+        <label>
+          <span>Scale:</span>
+          <input
+            type="range"
+            id="scale-control"
+            value="1"
+            min="0.1"
+            max="3"
+            step="0.1"
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          <span>SkewX:</span>
+          <input
+            type="range"
+            id="skewX-control"
+            value="0"
+            min="0"
+            max="80"
+            step="1"
+          />
+        </label>
+      </p>
+      <p>
+        <label>
+          <span>SkewY:</span>
+          <input
+            type="range"
+            id="skewY-control"
+            value="0"
+            min="0"
+            max="80"
+            step="1"
+          />
+        </label>
+      </p>
+    </div> -->
+
+    <script src="./dist/fabric.min.js"></script>
+    <!-- <script src="./src/js/dom-to-image.min.js"></script> -->
+    <script src="./src/js/FileSaver.min.js"></script>
+    <script src="./src/js/jquery-3.6.0.min.js"></script>
+    <script src="./src/js/dom-to-image.min.js"></script>
+    <!-- <script>
+      const canvas = new fabric.Canvas("tshirt-canvas", {
+        width: 200,
+        height: 300,
+        selection: false,
+      });
+      canvas.requestRenderAll();
+
+      let mousePressed = false;
+
+      canvas.on("mouse:move", (event) => {
+        if (mousePressed) {
+          canvas.setCursor("crosshair");
+          canvas.requestRenderAll();
+        }
+      });
+
+      canvas.on("mouse:down", (event) => {
+        mousePressed = true;
+        canvas.setCursor("crosshair");
+        canvas.requestRenderAll();
+      });
+
+      canvas.on("mouse:up", (event) => {
+        mousePressed = false;
+        canvas.setCursor("default");
+        canvas.requestRenderAll();
+      });
+    </script> -->
+
+    <script>
+      let canvas = new fabric.Canvas("tshirt-canvas");
+
+      function updateTshirtImage(imageURL) {
+        fabric.Image.fromURL(imageURL, function (img) {
+          img.scaleToHeight(300);
+          img.scaleToWidth(300);
+          canvas.centerObject(img);
+          canvas.add(img);
+          canvas.renderAll();
+        });
+      }
+
+      document.getElementById("tshirt-color").addEventListener(
+        "change",
+        function () {
+          document.getElementById("tshirt-div").style.backgroundColor =
+            this.value;
+        },
+        false
+      );
+
+      document.getElementById("tshirt-design").addEventListener(
+        "change",
+        function () {
+          updateTshirtImage(this.value);
+        },
+        false
+      );
+
+      //upload custom design
+      document.getElementById("tshirt-custompicture").addEventListener(
+        "change",
+        function (e) {
+          var render = new FileReader();
+
+          render.onload = function (event) {
+            var imgObj = new Image();
+            imgObj.src = event.target.result;
+
+            //load picture, create image in Fabric.js
+            imgObj.onload = function () {
+              var img = new fabric.Image(imgObj);
+
+              img.scaleToHeight(300);
+              img.scaleToWidth(300);
+              canvas.centerObject(img);
+              canvas.add(img);
+              canvas.renderAll();
+            };
+          };
+          //If user selected picture, load it
+          if (e.target.files[0]) {
+            render.readAsDataURL(e.target.files[0]);
+          }
+        },
+        false
+      );
+      //Dell key obj remove
+      document.addEventListener("keydown", function (e) {
+        var keyCode = e.keyCode;
+
+        if (keyCode == 46) {
+          // console.log("Removing selected element on Fabric.js on DELETE key !");
+          canvas.remove(canvas.getActiveObject());
+        }
+      });
+
+      function myFunction() {
+        canvas.remove(canvas.getActiveObject());
+      }
+
+      //download
+
+      $(document).ready(function () {
+        $("#download").click(function () {
+          domtoimage
+            .toBlob(document.getElementById("tshirt-div"))
+            .then(function (blob) {
+              window.saveAs(blob, "myDesign.png");
+            });
+        });
+      });
+
+      // pen tool
+      // let mousePressed = false;
+
+      // canvas.on("mouse:move", (event) => {
+      //   if (mousePressed) {
+      //     canvas.setCursor("crosshair");
+      //     canvas.requestRenderAll();
+      //   }
+      // });
+
+      // canvas.on("mouse:down", (event) => {
+      //   mousePressed = true;
+      //   canvas.setCursor("crosshair");
+      //   canvas.requestRenderAll();
+      // });
+
+      // canvas.on("mouse:up", (event) => {
+      //   mousePressed = false;
+      //   canvas.setCursor("default");
+      //   canvas.requestRenderAll();
+      // });
+
+      // (function () {
+      //   var canvas = (this.__canvas = new fabric.Canvas("tshirt-canvas"));
+      //   fabric.Object.prototype.transparentCorners = false;
+
+      //   var $ = function (id) {
+      //     return document.getElementById(id);
+      //   };
+
+      //   // var rect = new fabric.Rect({
+      //   //   width: 100,
+      //   //   height: 100,
+      //   //   top: 100,
+      //   //   left: 100,
+      //   //   fill: "rgba(255,0,0,0.5)",
+      //   // });
+
+      //   canvas.add(rect);
+
+      //   var angleControl = $("angle-control");
+      //   angleControl.oninput = function () {
+      //     rect.set("angle", parseInt(this.value, 10)).setCoords();
+      //     canvas.requestRenderAll();
+      //   };
+
+      //   var scaleControl = $("scale-control");
+      //   scaleControl.oninput = function () {
+      //     rect.scale(parseFloat(this.value)).setCoords();
+      //     canvas.requestRenderAll();
+      //   };
+
+      //   var topControl = $("top-control");
+      //   topControl.oninput = function () {
+      //     rect.set("top", parseInt(this.value, 10)).setCoords();
+      //     canvas.requestRenderAll();
+      //   };
+
+      //   var leftControl = $("left-control");
+      //   leftControl.oninput = function () {
+      //     rect.set("left", parseInt(this.value, 10)).setCoords();
+      //     canvas.requestRenderAll();
+      //   };
+
+      //   var skewXControl = $("skewX-control");
+      //   skewXControl.oninput = function () {
+      //     rect.set("skewX", parseInt(this.value, 10)).setCoords();
+      //     canvas.requestRenderAll();
+      //   };
+
+      //   var skewYControl = $("skewY-control");
+      //   skewYControl.oninput = function () {
+      //     rect.set("skewY", parseInt(this.value, 10)).setCoords();
+      //     canvas.requestRenderAll();
+      //   };
+
+      //   function updateControls() {
+      //     scaleControl.value = rect.scaleX;
+      //     angleControl.value = rect.angle;
+      //     leftControl.value = rect.left;
+      //     topControl.value = rect.top;
+      //     skewXControl.value = rect.skewX;
+      //     skewYControl.value = rect.skewY;
+      //   }
+      //   canvas.on({
+      //     "object:moving": updateControls,
+      //     "object:scaling": updateControls,
+      //     "object:resizing": updateControls,
+      //     "object:rotating": updateControls,
+      //     "object:skewing": updateControls,
+      //   });
+      // })();
+    </script>
+  </body>
+</html>
