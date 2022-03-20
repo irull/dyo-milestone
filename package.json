@@ -1,7 +1,7 @@
 {
   "name": "dyo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.js, index.html",
   "directories": {
     "dist": "dist"
   },
@@ -12,6 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "daisyui": "^2.8.0",
+    "dom-to-image": "^2.6.0",
+    "fabric": "^5.2.1",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.6.0",
     "lite-server": "^2.6.1"
   }
 }
