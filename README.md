@@ -15,3 +15,4 @@ Toll yang digunakan antara lain :
 - dom-to-image js
 - canvas-toBlob js
 - FileSaver js
+- iziToast js @1.4.0
