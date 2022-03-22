@@ -11,6 +11,25 @@
   <body class="bg-white h-screen">
     <!-- tshirt div -->
     <div id="tshirt-div" class="w-[452px] h-[548px] relative bg-white">
+      <!-- <label class="swap swap-flip text-9xl">
+        <input type="checkbox" />
+        <div class="swap-on">
+          <img
+            id="tshirt-backgroundpicture"
+            src="./src/img/background_tshirt.png"
+            alt="tshirt"
+            class="cursor-pointer"
+          />
+        </div>
+        <div class="swap-off">
+          <img
+            id="tshirt-backgroundpicture"
+            src="./src/img/background_tshirtB.png"
+            alt="tshirt"
+            class="cursor-pointer"
+          />
+        </div>
+      </label> -->
       <img
         id="tshirt-backgroundpicture"
         src="./src/img/background_tshirt.png"
@@ -18,7 +37,7 @@
       />
       <div
         id="drawingArea"
-        class="absolute top-[60px] left-[122px] z-10 w-[200px] h-[400px]"
+        class="absolute top-[60px] left-[122px] z-10 w-[200px] h-[300px]"
       >
         <div class="w-[200px] h-[300px] relative select-none">
           <canvas
@@ -48,7 +67,7 @@
     </div>
 
     <!-- design -->
-    <label for="tshirt-design" class="text-gray-700">T-shirt Design :</label>
+    <!-- <label for="tshirt-design" class="text-gray-700">T-shirt Design :</label>
     <select id="tshirt-design">
       <option value="">Pilih design ...</option>
       <option value="./src/img/design/batman_small.png">Batman</option>
@@ -59,7 +78,42 @@
       <option value="./src/img/design/spiderman-1.png">Spiderman</option>
       <option value="./src/img/design/spiderman.png">Spiderman-1</option>
       <option value="./src/img/design/spider.png">Spider</option>
-    </select>
+    </select> -->
+    <div
+      tabindex="0"
+      class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-96"
+    >
+      <input type="checkbox" class="peer" />
+      <div class="collapse-title text-xl font-medium">Pilihan Design</div>
+      <div class="collapse-content transition duration-300">
+        <div class="flex flex-wrap gap-3 overflow-y-scroll design-container">
+          <div>
+            <img
+              class="cursor-pointer h-14 w-auto"
+              src="./src/img/design/spider.png"
+            />
+          </div>
+          <div class="cursor-pointer h-14 w-24">
+            <img src="./src/img/design/avengers.png" />
+          </div>
+          <div class="cursor-pointer h-14 w-24">
+            <img src="./src/img/design/batman_small.png" />
+          </div>
+          <div class="cursor-pointer h-14 w-24">
+            <img src="./src/img/design/blackphanter.png" />
+          </div>
+          <div class="cursor-pointer h-14 w-24">
+            <img src="./src/img/design/marvel.png" />
+          </div>
+          <div class="cursor-pointer h-14 w-24">
+            <img src="./src/img/design/spiderman-1.png" />
+          </div>
+          <div class="cursor-pointer h-14 w-24">
+            <img src="./src/img/design/spiderman.png" />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- colors -->
     <!-- <label for="tshirt-color" class="text-gray-700">T-shirt Colors:</label>
@@ -116,45 +170,45 @@
         Pilih Warna Kaos Favoritmu
       </div>
       <div class="collapse-content transition duration-300">
-        <ul class="flex gap-x-3" id="tshirt-color">
+        <ul class="flex gap-x-3 tshirt-color" id="tshirt-color">
           <li>
             <button
-              onclick="putih()"
+              value="#fff"
               type="button"
-              class="btn btn-sm btn-circle bg-white hover:bg-slate-50 border-gray-400 hover:border-gray-400"
+              class="btn btn-sm btn-circle bg-white border-gray-400 hover:bg-white hover:border-gray-400"
             ></button>
           </li>
           <li>
             <button
-              onclick="hitam()"
+              value="#000"
               type="button"
               class="btn btn-sm btn-circle bg-gray-900 hover:bg-black border-none"
             ></button>
           </li>
           <li>
             <button
-              onclick="abu()"
+              value="#7C7C7C"
               type="button"
               class="btn btn-sm btn-circle bg-gray-500 hover:bg-gray-600 border-none"
             ></button>
           </li>
           <li>
             <button
-              onclick="navy()"
+              value="#000026"
               type="button"
               class="btn btn-sm btn-circle bg-indigo-900 hover:bg-indigo-900 border-none"
             ></button>
           </li>
           <li>
             <button
-              onclick="biru()"
+              value="#003fbd"
               type="button"
               class="btn btn-sm btn-circle bg-blue-700 hover:bg-blue-800 border-none"
             ></button>
           </li>
           <li>
             <button
-              onclick="merah()"
+              value="#D60000"
               type="button"
               class="btn btn-sm btn-circle bg-red-700 hover:bg-red-800 border-none"
             ></button>
@@ -277,7 +331,8 @@
             Simpan
           </button>
           <a
-            href="#"
+            href="https://wa.me/6281389450205?text=Hai👋%20selamat%20datang%20di%20smiletone%2C%20silahkan%20kirim%20designmu%20disni%20yah..%20mimin%20tunggu%20loh👍😊"
+            target="_blank"
             class="btn font-medium text-white w-48 rounded-full bg-green-600 hover:bg-green-700 border-0 transition duration-300"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
