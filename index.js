@@ -116,10 +116,16 @@ function myFunction() {
 
 $(document).ready(function () {
   $("#download").click(function () {
-    domtoimage
-      .toBlob(document.getElementById("tshirt-div"))
-      .then(function (blob) {
+    domtoimage.toBlob(document.getElementById("tshirt-div")).then(
+      function (blob) {
         window.saveAs(blob, "myDesign.png");
-      });
+      },
+      iziToast.show({
+        transitionIn: "bounceInLeft",
+        color: "green",
+        title: "Berhasil",
+        message: "Gambar berhasil disimpan",
+      })
+    );
   });
 });
