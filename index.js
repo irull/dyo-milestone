@@ -10,25 +10,6 @@ function updateTshirtImage(imageURL) {
   });
 }
 
-// function hitam() {
-//   document.getElementById("tshirt-div").style.backgroundColor = "#000";
-// }
-// function putih() {
-//   document.getElementById("tshirt-div").style.backgroundColor = "#fff4";
-// }
-// function abu() {
-//   document.getElementById("tshirt-div").style.backgroundColor = "#9f9f9f";
-// }
-// function navy() {
-//   document.getElementById("tshirt-div").style.backgroundColor = "#0b0159";
-// }
-// function biru() {
-//   document.getElementById("tshirt-div").style.backgroundColor = "#0704af";
-// }
-// function merah() {
-//   document.getElementById("tshirt-div").style.backgroundColor = "#e10000";
-// }
-
 const btn = document.querySelectorAll(".tshirt-color button");
 btn.forEach((button) => {
   button.addEventListener(
@@ -39,24 +20,6 @@ btn.forEach((button) => {
     false
   );
 });
-
-// document.getElementById("tshirt-color").addEventListener(
-//   "click",
-//   function getvalue() {
-//     document.getElementById("tshirt-div").style.backgroundColor = this.value;
-//   },
-//   false
-// );
-
-// tshirt design
-
-// document.getElementById("tshirt-design").addEventListener(
-//   "change",
-//   function () {
-//     updateTshirtImage(this.value);
-//   },
-//   false
-// );
 
 const images = document.querySelectorAll(".design-container img");
 images.forEach((image) => {
